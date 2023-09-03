@@ -14,24 +14,14 @@ client.connect()
   });
 const db = client.db(db_name);
 const collection = db.collection('trains');
-/*
-collection.insertOne({ message: 'hello' }, (err, result) => {
-  if (err) {
-    console.error("Error inserting document:", err);
-    res.status(500).json({ error: 'Internal server error' });
-  } else {
-    console.log("Document inserted successfully");
-    res.status(200).json({ message: 'hello' });
-  }
-});
-*/
+
 const x = await collection.find({}).toArray()
 console.log(x)
 //insert
 
 app.use(cors());
 
-app.use(express.static('public'));
+
 function findtheid(id){
   console.log(typeof id)
   for(let i=0;i<x.length;i++){
