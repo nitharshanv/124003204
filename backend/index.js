@@ -39,7 +39,7 @@ function findtheid(id){
 app.post('/trains/train/:id',(req,res)=>{
   var id= req.params['id'];
   let m=findtheid(id);
-  res.send(m)
+  res.json(m)
 
   //console.log(thetrain)
 
